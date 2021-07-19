@@ -14,6 +14,7 @@ total = bytes2human(memory.total)
 
 color = get_value("label.color")
 font = get_value("value.font")
+icon = get_value("label.memory")
 
-print(f"<span color='{color}' font='{font}'>RAM: {used}/{total}</span>")
+print(f"<span color='{color}' font='{font}'>{icon} </span><span color='{color}' font='{font}'>{used}/{total}</span>")
 
