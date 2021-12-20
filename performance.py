@@ -17,7 +17,12 @@ performance = performance_status.stdout.decode('utf-8').split()
 performance_value = performance[performance.index('*') + 1].replace(':', '')
 
 charging_status = subprocess.run(['acpi'], capture_output=True)
-charging = charging_status.stdout.decode('utf-8').split()[4]
+charging_list = charging_status.stdout.decode('utf-8').split()
+
+if len(charging_list) > 4:
+    charging = charging_list[4]
+else:
+    charging = ""
 
 
 label_color = color = get_value("label.color")
